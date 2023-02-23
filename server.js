@@ -16,6 +16,23 @@ app.get("/todos",function(req,res){
     res.json(messages);
 });
 
+app.get("/contact",function(req,res){
+    
+    res.sendFile("/client/contact.html", {root : __dirname});
+});
+app.get("/",function(req,res){
+    
+    res.sendFile("/client/index.html", {root : __dirname});
+});
+app.get("/recommendations",function(req,res){
+    
+    res.sendFile("/client/reccomendations.html", {root : __dirname});
+});
+app.get("/current",function(req,res){
+    
+    res.sendFile("/client/current.html", {root : __dirname});
+});
+
 app.post("/todos",function(req,res){
     var message=req.body;
     console.log(message)

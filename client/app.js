@@ -94,42 +94,7 @@ var main = function()
         }   
     });
 
-    
-    // const delayLoop = (n, delay) => {
-    //   return (x, i) => {
-    //     setTimeout(() => {
-    //       n(x);
-    //     }, i * delay);
-    //   };
-    // };
-  
-    
-    // const lyrics = [
-    //   "Gale Song ~The Lumineers",
-      
-    // ];
-    
-    // const output = document.querySelector("#output");
-    
-    // const display = s => output.innerText = s;
-    
-    // console.log(todos)
-    // lyrics.forEach(delayLoop(display, 1000));
-    var $rtime = $(".ragtime")
-    //var $rtime = $("<p>")
-    let index = 0
-    setInterval(function()
-    {
-      
-        console.log(todos[index]);
-        $rtime.text(todos[index]);
-        //$("body").append($rtime)
-        index+=1
-        if (index ==todos.length)
-        {
-            index = 0;
-        }
-    },2000)
+   
 };
 
 $(document).ready(main);
