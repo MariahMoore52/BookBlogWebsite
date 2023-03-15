@@ -57,6 +57,30 @@ var main = function()
             
         } 
     });
+
+    $(".submit button").on("click",function(event){
+      if ($(".comment-input input").val() !=="")
+      {
+          
+
+          let mes = $(".comment-input input").val("")
+          if(mes != ""){
+            var $p_body = $("<p>");
+            $p_body.text();
+            $("body").append($p_body)
+            console.log(mes);
+            var newToDo = {mes}
+            todos.push(newToDo)
+            $.post("contact",newToDo,function(response)
+            {
+              console.log("We posted to the server!")
+              console.log(response)
+            })
+          }
+          
+      } 
+  });
+
     $(".comment-input input").on("keypress", function(event)
     {
         if ($(".comment-input input").val() !=="" && event.keyCode==13)

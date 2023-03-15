@@ -33,10 +33,13 @@ app.get("/current",function(req,res){
     res.sendFile("/client/current.html", {root : __dirname});
 });
 
-app.post("/todos",function(req,res){
+app.post("/contact",function(req,res){
     var message=req.body;
     console.log(message)
     messages.push(message)
     
+    res.json(messages);
+
     res.json({"message" : "Posted to server!"})
+    res.send('<h1 style="color: green" >Thank You, Message has been Sent.');
 });
